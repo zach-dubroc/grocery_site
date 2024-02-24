@@ -1,20 +1,21 @@
 import React from "react";
-//TODO
-//get add button funcional
-//context API/all in one file/individual
-function groceryItem(props) {
+
+function groceryItem({ price, title, img, handleItem }) {
+  //take in props for each grocery item card
+  let item = { price, title, img, handleItem };
+
   return (
     <div className="col-sm-4 align-items-center text-center">
       <div className="row text-nowrap overflow-hidden">
         <div className="col-sm-12">
-          <h6>
-            {props.title.length > 25 ? props.title.split(" ")[0] : props.title}
-          </h6>
+          <h6>{title.length > 25 ? title.split(" ")[0] : title}</h6>
         </div>
       </div>
-      <img className="thumbail" src={require(`./images/${props.img}`)} alt="" />
-      <h6>{props.price.toFixed(2)}$</h6>
-      <input type="button" value={"add"} />
+      <img className="thumbail" src={require(`./images/${img}`)} alt="" />
+      <h6>{price.toFixed(2)}$</h6>
+      {/* set onClick to call function inside of props
+      which comes from main app component, down to menu component, then to here */}
+      <input type="button" value={"add"} onClick={() => handleItem(item)} />
     </div>
   );
 }
