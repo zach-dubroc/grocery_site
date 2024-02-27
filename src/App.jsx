@@ -2,26 +2,31 @@ import React from "react";
 import NavBar from "./components/Header";
 import GroceryMenu from "./components/GroceryMenu";
 import Cart from "./components/Cart";
+
 //TODO
-//get and display total in cart component
+//navbar, show item count, get filter types
 
 function App() {
   const [cartItems, setCartItems] = React.useState([]);
-
+  const [clear, setClear] = React.useState(false);
   const [showCart, setShowCart] = React.useState(false);
 
   return (
     <div className="container-fluid">
       <div className="row">
         <div className="col-sm-12">
-          <NavBar />
+          <NavBar showCart={showCart} show={setShowCart} />
         </div>
-        <div className="col-sm-8">
+        <div className={showCart ? "col-sm-8" : "col-sm-12"}>
           <GroceryMenu addItems={setCartItems} />
         </div>
-        <div className="col-sm-4">
-          {/* send array of cart items from menu cp -> cart cp */}
-          <Cart cartItems={cartItems} />
+        <div className={showCart ? "col-sm-4" : "collapse"}>
+          <Cart
+            cartItems={cartItems}
+            resetItems={setCartItems}
+            clear={clear}
+            clearList={setClear}
+          />
         </div>
       </div>
     </div>

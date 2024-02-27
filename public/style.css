@@ -1,7 +1,7 @@
 
 
 .menu{
-    max-height:75vh;
+    max-height:85vh;
     max-width: 100vw;
 
 }
@@ -10,3 +10,20 @@ img{
     width: 100px;
     height: 100px;
 }
+
+.cart{
+    /* border: 1px solid tomato; */
+    height: 85vh;
+
+}
+
+.total{
+    /* border: 1px solid tomato; */
+    
+}
+
+.btn{
+    min-width: none;
+    min-height: none;
+}
+

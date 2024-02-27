@@ -8,7 +8,7 @@ function groceryItem({ price, title, img, handleItem }) {
     <div className="col-sm-4 align-items-center text-center">
       <div className="row text-nowrap overflow-hidden">
         <div className="col-sm-12">
-          <h6>{title.length > 25 ? title.split(" ")[0] : title}</h6>
+          <h6>{title}</h6>
         </div>
       </div>
       <img className="thumbail" src={require(`./images/${img}`)} alt="" />

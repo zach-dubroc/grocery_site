@@ -6,7 +6,7 @@ function GroceryMenu(props) {
   //adds data containing gorovet item info to new array to be used in cart state
   const adItems = (data) => {
     props.addItems((prev) => [...prev, data]);
-    console.log(data);
+    //console.log(data);
   };
 
   return (
