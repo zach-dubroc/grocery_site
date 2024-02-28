@@ -2,7 +2,7 @@ import React from "react";
 import CartList from "./CartList";
 import Total from "./Total";
 import Checkout from "./Checkout";
-
+//change message, display items better, set subtotal and send it to total component
 function Cart(props) {
   let itemCount = 0;
   let total = 0;
@@ -26,8 +26,8 @@ function Cart(props) {
         <h5>{itemCount == 0 ? "is empty:(" : ""}</h5>
       </div>
       <div className="row total align-items-center text-center">
-        <h5>{itemCount > 0 ? `${itemCount} item(s)` : ""}</h5>
         <Total total={total} clear={props.clear} />
+
         <Checkout
           clearList={props.clearList}
           clear={props.clear}

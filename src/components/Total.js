@@ -1,6 +1,8 @@
 import React from "react";
-
+//add subtotal
 function Total(props) {
+  //change to be subtotal and total
+  //total = total * .07
   let msg = "";
   props.clear
     ? (msg = "ty for shopping!")

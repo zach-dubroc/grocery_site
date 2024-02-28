@@ -1,12 +1,11 @@
 import React from "react";
 import GroceryItem from "./GroceryItem";
-import GroceryData from "./GroceryData";
-
+//redo
 function GroceryMenu(props) {
-  //adds data containing gorovet item info to new array to be used in cart state
+  let counter = 0;
+
   const adItems = (data) => {
     props.addItems((prev) => [...prev, data]);
-    //console.log(data);
   };
 
   return (
@@ -14,9 +13,10 @@ function GroceryMenu(props) {
       <div className="col-sm-12 border">
         <div className="overflow-auto row menu">
           {/* map over grocery data, send props to grocery items component */}
-          {GroceryData.map((y) => {
+          {props.items.map((y) => {
             return (
               <GroceryItem
+                key={Math.random()}
                 title={y.title}
                 price={y.price}
                 img={y.filename}

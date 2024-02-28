@@ -10,7 +10,7 @@ export default [
     rating: 4,
   },
   {
-    title: "fresh stawberry",
+    title: "fresh strawberry",
     type: "fruit",
     description: "Sweet fresh stawberry on the wooden table",
     filename: "1.jpg",

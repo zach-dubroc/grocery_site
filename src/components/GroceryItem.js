@@ -1,5 +1,5 @@
 import React from "react";
-
+//redo
 function groceryItem({ price, title, img, handleItem }) {
   //take in props for each grocery item card
   let item = { price, title, img, handleItem };
@@ -15,7 +15,11 @@ function groceryItem({ price, title, img, handleItem }) {
       <h6>{price.toFixed(2)}$</h6>
       {/* set onClick to call function inside of props
       which comes from main app component, down to menu component, then to here */}
-      <input type="button" value={"add"} onClick={() => handleItem(item)} />
+      <input
+        type="button"
+        value={`add to cart`}
+        onClick={() => handleItem(item)}
+      />
     </div>
   );
 }

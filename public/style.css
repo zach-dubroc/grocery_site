@@ -1,8 +1,19 @@
+/* https://coolors.co/palette/ede0d4-e6ccb2-ddb892-b08968-7f5539-9c6644 */
 
+body{
+    background-color: #fffcf2;
+}
+.header{
+    background-color: #e9d8a6;
+}
 
 .menu{
     max-height:85vh;
     max-width: 100vw;
+}
+.cart{
+    /* border: 1px solid tomato; */
+    height: 85vh;
 
 }
 img{
@@ -11,19 +22,8 @@ img{
     height: 100px;
 }
 
-.cart{
-    /* border: 1px solid tomato; */
-    height: 85vh;
-
-}
-
-.total{
-    /* border: 1px solid tomato; */
-    
-}
-
 .btn{
-    min-width: none;
-    min-height: none;
+    min-width: 100px;
+    min-height: 0;
 }
 

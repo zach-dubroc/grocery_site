@@ -1,5 +1,7 @@
 import React from "react";
-
+import Logo from "./images/foopLogo.png";
+import SearchFilter from "./SearchFilter";
+//check responsives
 function NavBar(props) {
   const handleClick = () => {
     props.show((prev) => !prev);
@@ -7,13 +9,28 @@ function NavBar(props) {
   };
 
   return (
-    <div className="row d-flex border-bottom">
-      <div className="col-sm-4">
-        <h1>I'm a nav bar</h1>
-      </div>
-      <div className="col-sm-8 text-end">
-        <button onClick={handleClick}>cart</button>
-      </div>
+    <div className="row d-flex header">
+      <nav class="navbar bg-light">
+        <div class="container-fluid">
+          <img src={Logo} />
+
+          <div className="col-sm-4 align-self-end">
+            <SearchFilter
+              menuItems={props.menuItems}
+              filterItems={props.filterItems}
+              setItems={props.setItems}
+              filterLabel={props.menuItems}
+            />
+          </div>
+
+          <div className="col-sm-4 align-self-end text-end">
+            <button className="btn-dark btn" onClick={handleClick}>
+              cart
+              <h6>{props.count} item(s)</h6>
+            </button>
+          </div>
+        </div>
+      </nav>
     </div>
   );
 }

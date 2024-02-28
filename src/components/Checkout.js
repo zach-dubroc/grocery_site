@@ -1,15 +1,14 @@
 import React from "react";
-
+//comment
 const Checkout = (props) => {
   const handleClick = () => {
     props.clearList((prev) => !prev);
-    // console.log(clear);
+    props.resetItems((prev) => []);
   };
 
   const handleNewOrder = () => {
-    props.resetItems((prev) => []);
-
     props.clearList((prev) => !prev);
+    props.resetItems((prev) => []);
   };
 
   return (
@@ -17,7 +16,7 @@ const Checkout = (props) => {
       <input
         className={`${
           props.clear ? "collapse" : "visible"
-        } btn btn-primary btn-sm`}
+        } btn-dark btn p-2 m-1 px-1`}
         type="button"
         value="checkout"
         onClick={handleClick}
@@ -26,9 +25,9 @@ const Checkout = (props) => {
       <input
         className={`${
           !props.clear ? "collapse" : "visible"
-        } btn btn-primary btn-sm`}
+        } btn-dark btn p-2 m-1 px-1`}
         type="button"
-        value="new order?"
+        value="keep shopping"
         onClick={handleNewOrder}
       />
     </div>
