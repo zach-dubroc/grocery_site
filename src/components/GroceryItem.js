@@ -1,21 +1,20 @@
 import React from "react";
 //redo
 function groceryItem({ price, title, img, handleItem }) {
-  //take in props for each grocery item card
   let item = { price, title, img, handleItem };
 
   return (
-    <div className="col-sm-4 align-items-center text-center">
+    <div className="col-sm-4 align-items-center text-center mt-4">
       <div className="row text-nowrap overflow-hidden">
         <div className="col-sm-12">
           <h6>{title}</h6>
         </div>
       </div>
-      <img className="thumbail" src={require(`./images/${img}`)} alt="" />
+      <img className="thumbnail" src={require(`./images/${img}`)} alt="" />
       <h6>{price.toFixed(2)}$</h6>
-      {/* set onClick to call function inside of props
-      which comes from main app component, down to menu component, then to here */}
+
       <input
+        className="btn"
         type="button"
         value={`add to cart`}
         onClick={() => handleItem(item)}

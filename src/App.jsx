@@ -3,22 +3,20 @@ import NavBar from "./components/Header";
 import GroceryMenu from "./components/GroceryMenu";
 import Cart from "./components/Cart";
 import GroceryData from "./components/GroceryData";
-import SearchFilter from "./components/SearchFilter";
+import Footer from "./components/Footer";
 
-//TODO
-//add subtotal into checkout
 function App() {
+  //global states
   const [items, setItems] = React.useState(GroceryData);
   const [cartItems, setCartItems] = React.useState([]);
   const [clear, setClear] = React.useState(false);
   const [showCart, setShowCart] = React.useState(false);
+  //grabs grocerydata types w/o duplicates
   const menuItems = [...new Set(GroceryData.map((x) => x.type))];
-
+  //set category for the filter cp
   const filterItems = (category) => {
     const newItems = GroceryData.filter((newVal) => newVal.type === category);
     setItems(newItems);
-
-    console.log(menuItems);
   };
 
   return (
@@ -33,8 +31,10 @@ function App() {
             filterItems={filterItems}
             setItems={setItems}
             filterLabel={menuItems}
+            clear={clear}
           />
         </div>
+        {/* show/hide cart with class names */}
         <div className={showCart ? "col-sm-4" : "collapse"}>
           <Cart
             cartItems={cartItems}
@@ -43,7 +43,7 @@ function App() {
             clearList={setClear}
           />
         </div>
-
+        {/* resize menu based on cart vis*/}
         <div className={showCart ? "col-sm-8 border" : "col-sm-12 border-top"}>
           <GroceryMenu
             count={cartItems.length}
@@ -52,6 +52,7 @@ function App() {
           />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,29 +1,65 @@
 /* https://coolors.co/palette/ede0d4-e6ccb2-ddb892-b08968-7f5539-9c6644 */
 
 body{
-    background-color: #fffcf2;
+    background-color: #E6CCB2;
 }
 .header{
-    background-color: #e9d8a6;
+    background-color: #ede0d4;
+}
+
+.cart{
+    background-color: #B08968;
 }
 
 .menu{
-    max-height:85vh;
+    max-height:100vh;
     max-width: 100vw;
 }
 .cart{
-    /* border: 1px solid tomato; */
-    height: 85vh;
 
+    height: 85vh;
 }
+
+.cartlist{
+    background-color: #fefae0;
+}
+
 img{
     object-fit: cover;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+@media(max-width: 576px){
+    .thumbnail{
+        object-fit: cover;
+        width: 200px;
+        height: 200px;
+    }
+
+    .menu{
+       margin: 10px;
+       border: 1px solid black
+    }
+
+    .cart{
+
+        height: 50vh;
+        padding: 15px;
+    }
+    
 }
 
 .btn{
-    min-width: 100px;
+    min-width: 0px;
     min-height: 0;
+    background-color: #adc178;
+    color: #432818;
 }
+.btn:hover{
+    background-color: #41521f;
+    color: #efebce;
+}
+
 

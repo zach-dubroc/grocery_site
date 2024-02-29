@@ -4,30 +4,28 @@ const Checkout = (props) => {
   const handleClick = () => {
     props.clearList((prev) => !prev);
     props.resetItems((prev) => []);
+    console.log(props.clear);
   };
 
   const handleNewOrder = () => {
     props.clearList((prev) => !prev);
     props.resetItems((prev) => []);
+    console.log(props.clear);
   };
 
   return (
     <div className="col-sm-6">
       <input
-        className={`${
-          props.clear ? "collapse" : "visible"
-        } btn-dark btn p-2 m-1 px-1`}
+        className={`${props.clear ? "collapse" : "visible"} btn-dark btn`}
         type="button"
         value="checkout"
         onClick={handleClick}
       />
 
       <input
-        className={`${
-          !props.clear ? "collapse" : "visible"
-        } btn-dark btn p-2 m-1 px-1`}
+        className={`${!props.clear ? "collapse" : "visible"} btn-dark btn`}
         type="button"
-        value="keep shopping"
+        value="new order"
         onClick={handleNewOrder}
       />
     </div>

@@ -1,32 +1,31 @@
 import React from "react";
 import Logo from "./images/foopLogo.png";
 import SearchFilter from "./SearchFilter";
-//check responsives
+
 function NavBar(props) {
+  //sets cart button to show/hide cart on click
   const handleClick = () => {
     props.show((prev) => !prev);
     console.log(props);
   };
 
   return (
-    <div className="row d-flex header">
-      <nav class="navbar bg-light">
+    <div className="row d-flex flex-nowrap header">
+      <nav class="navbar">
         <div class="container-fluid">
           <img src={Logo} />
-
-          <div className="col-sm-4 align-self-end">
+          <h3 className="font-monospace">[slogan]</h3>
+          <div className="align-self-end text-end d-flex pe-2">
+            {/* pass filter functions to filter */}
             <SearchFilter
               menuItems={props.menuItems}
               filterItems={props.filterItems}
               setItems={props.setItems}
               filterLabel={props.menuItems}
             />
-          </div>
-
-          <div className="col-sm-4 align-self-end text-end">
             <button className="btn-dark btn" onClick={handleClick}>
-              cart
-              <h6>{props.count} item(s)</h6>
+              cart <i class="fa fa-shopping-cart"></i>
+              {!props.clear ? <h6>{props.count} item(s)</h6> : ""}
             </button>
           </div>
         </div>

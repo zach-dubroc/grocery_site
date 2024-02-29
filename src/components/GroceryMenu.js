@@ -10,7 +10,7 @@ function GroceryMenu(props) {
 
   return (
     <div className="row">
-      <div className="col-sm-12 border">
+      <div className="col-sm-12 border border-dark">
         <div className="overflow-auto row menu">
           {/* map over grocery data, send props to grocery items component */}
           {props.items.map((y) => {
