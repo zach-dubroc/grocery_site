@@ -5,9 +5,9 @@ function SearchFilter({ menuItems, filterItems, setItems, filterLabel }) {
   const [label, setLabel] = React.useState("category");
   return (
     <div className="row">
-      <div class="dropdown align-self-end">
+      <div className="dropdown align-self-end">
         <button
-          class="btn btn-secondary dropdown-toggle"
+          className="btn btn-secondary dropdown-toggle"
           type="button"
           id="dropdownMenuButton1"
           data-bs-toggle="dropdown"
@@ -16,11 +16,11 @@ function SearchFilter({ menuItems, filterItems, setItems, filterLabel }) {
           {label}
         </button>
         <ul
-          class="dropdown-menu text-center bg-light"
+          className="dropdown-menu text-center bg-light"
           aria-labelledby="dropdownMenuButton1"
         >
           <button
-            class="dropdown-item"
+            type="dropdown-item"
             href="#"
             onClick={() => {
               setLabel((prev) => "all");
@@ -33,7 +33,8 @@ function SearchFilter({ menuItems, filterItems, setItems, filterLabel }) {
           {/* maps through list of categories makes a button for each*/}
           {menuItems.map((val) => (
             <button
-              class="dropdown-item"
+              key={Math.random()}
+              type="dropdown-item"
               href="#"
               onClick={() => {
                 setLabel((prev) => val);

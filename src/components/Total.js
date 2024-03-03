@@ -15,8 +15,16 @@ function Total(props) {
 
   return (
     <div className="col-sm-6">
-      <h6>{sub}</h6>
-      <h5>{msg}</h5>
+      {props.subTotal === 0 ? (sub = "") : <h6>{sub}</h6>}
+      {(props.subTotal === 0) & !props.clear ? (
+        <h5>&#129402;</h5>
+      ) : (
+        <h5>
+          {msg}
+          <br />
+          {props.subTotal > 200 ? <p>&#128517;</p> : <p>&#128515;</p>}
+        </h5>
+      )}
     </div>
   );
 }

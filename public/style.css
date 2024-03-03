@@ -9,19 +9,22 @@ body{
 
 .cart{
     background-color: #B08968;
+    height: 85vh;
+
 }
 
 .menu{
-    max-height:100vh;
-    max-width: 100vw;
-}
-.cart{
-
-    height: 85vh;
+    
+    max-height:85vh;
+    width: 100vw;
 }
 
 .cartlist{
     background-color: #fefae0;
+}
+
+.total{
+    width: auto;
 }
 
 img{
@@ -31,6 +34,7 @@ img{
     border-radius: 10px;
 }
 
+
 @media(max-width: 576px){
     .thumbnail{
         object-fit: cover;
@@ -39,16 +43,10 @@ img{
     }
 
     .menu{
-       margin: 10px;
-       border: 1px solid black
+       border: 1px solid black;
     }
 
-    .cart{
 
-        height: 50vh;
-        padding: 15px;
-    }
-    
 }
 
 .btn{

@@ -21,14 +21,14 @@ function Cart(props) {
           return props.clear ? (
             ""
           ) : (
-            <CartList price={x.price} title={x.title} />
+            <CartList key={x.title} price={x.price} title={x.title} />
           );
         })}
         {/* cart empty msg */}
-        <h5>{itemCount == 0 ? "is empty:(" : ""}</h5>
+        <h5>{itemCount == 0 ? "contains nothing :(" : ""}</h5>
       </div>
 
-      <div className="row total align-items-center text-start">
+      <div className="row total align-items-center text-start flex-nowrap">
         {/* pass props to total component */}
         <Total
           subTotal={total}

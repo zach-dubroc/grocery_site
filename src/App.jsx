@@ -24,6 +24,7 @@ function App() {
       <div className="row">
         <div className="col-sm-12">
           <NavBar
+            //send props for hiding/showing cart + for filtering items by type
             count={cartItems.length}
             showCart={showCart}
             show={setShowCart}
@@ -52,7 +53,9 @@ function App() {
           />
         </div>
       </div>
-      <Footer />
+      <div className="row">
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -6,13 +6,12 @@ function NavBar(props) {
   //sets cart button to show/hide cart on click
   const handleClick = () => {
     props.show((prev) => !prev);
-    console.log(props);
   };
 
   return (
     <div className="row d-flex flex-nowrap header">
-      <nav class="navbar">
-        <div class="container-fluid">
+      <nav className="navbar">
+        <div className="container-fluid">
           <img src={Logo} />
           <h3 className="font-monospace">[slogan]</h3>
           <div className="align-self-end text-end d-flex pe-2">
@@ -24,7 +23,7 @@ function NavBar(props) {
               filterLabel={props.menuItems}
             />
             <button className="btn-dark btn" onClick={handleClick}>
-              cart <i class="fa fa-shopping-cart"></i>
+              cart <i className="fa fa-shopping-cart"></i>
               {!props.clear ? <h6>{props.count} item(s)</h6> : ""}
             </button>
           </div>

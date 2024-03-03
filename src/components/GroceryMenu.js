@@ -2,15 +2,13 @@ import React from "react";
 import GroceryItem from "./GroceryItem";
 //redo
 function GroceryMenu(props) {
-  let counter = 0;
-
   const adItems = (data) => {
     props.addItems((prev) => [...prev, data]);
   };
 
   return (
     <div className="row">
-      <div className="col-sm-12 border border-dark">
+      <div className="col-sm-12 border-start border-top border-dark">
         <div className="overflow-auto row menu">
           {/* map over grocery data, send props to grocery items component */}
           {props.items.map((y) => {
