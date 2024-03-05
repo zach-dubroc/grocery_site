@@ -1,7 +1,7 @@
 import React from "react";
-//redo
-function groceryItem({ price, title, img, handleItem }) {
-  let item = { price, title, img, handleItem };
+
+function groceryItem({ price, title, img, id, handleItem }) {
+  let item = { price, title, img, id, handleItem };
 
   return (
     <div className="col-sm-4 align-items-center text-center mt-4">
@@ -12,7 +12,7 @@ function groceryItem({ price, title, img, handleItem }) {
       </div>
       <img className="thumbnail" src={require(`./images/${img}`)} alt="" />
       <h6>{price.toFixed(2)}$</h6>
-
+      {/* call add to cart function on item */}
       <input
         className="btn"
         type="button"

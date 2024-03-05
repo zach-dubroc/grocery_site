@@ -1,6 +1,7 @@
 import React from "react";
 import GroceryItem from "./GroceryItem";
-//redo
+import { v4 as uuidv4 } from "uuid";
+
 function GroceryMenu(props) {
   const adItems = (data) => {
     props.addItems((prev) => [...prev, data]);
@@ -13,8 +14,10 @@ function GroceryMenu(props) {
           {/* map over grocery data, send props to grocery items component */}
           {props.items.map((y) => {
             return (
+              //!
               <GroceryItem
-                key={Math.random()}
+                id={uuidv4()}
+                key={uuidv4()}
                 title={y.title}
                 price={y.price}
                 img={y.filename}

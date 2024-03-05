@@ -1,3 +1,4 @@
+//grocery object
 export default [
   {
     title: "Brown eggs",
@@ -9,6 +10,7 @@ export default [
     price: 28.1,
     rating: 4,
   },
+
   {
     title: "fresh strawberry",
     type: "fruit",

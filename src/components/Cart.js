@@ -2,8 +2,10 @@ import React from "react";
 import CartList from "./CartList";
 import Total from "./Total";
 import Checkout from "./Checkout";
+import { v4 as uuidv4 } from "uuid";
 
 function Cart(props) {
+  console.log(props.cartItems);
   //vars for updating totals and count
   let itemCount = 0;
   let total = 0;
@@ -21,7 +23,14 @@ function Cart(props) {
           return props.clear ? (
             ""
           ) : (
-            <CartList key={x.title} price={x.price} title={x.title} />
+            <CartList
+              cartItems={props.cartItems}
+              id={x.id}
+              key={uuidv4()}
+              price={x.price}
+              title={x.title}
+              delete={props.delete}
+            />
           );
         })}
         {/* cart empty msg */}

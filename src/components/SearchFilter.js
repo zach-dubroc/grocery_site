@@ -1,7 +1,8 @@
 import React from "react";
 import GroceryData from "./GroceryData";
-//redo
-function SearchFilter({ menuItems, filterItems, setItems, filterLabel }) {
+
+// update label state based on clicked value, send filter value to App
+function SearchFilter({ menuItems, filterItems, setItems }) {
   const [label, setLabel] = React.useState("category");
   return (
     <div className="row">

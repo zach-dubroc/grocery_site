@@ -11,13 +11,22 @@ function App() {
   const [cartItems, setCartItems] = React.useState([]);
   const [clear, setClear] = React.useState(false);
   const [showCart, setShowCart] = React.useState(false);
-  //grabs grocerydata types w/o duplicates
+
+  //grabs grocerydata types w/o duplicates for filter menu
   const menuItems = [...new Set(GroceryData.map((x) => x.type))];
-  //set category for the filter cp
+
+  //sets the category for the filter cp
   const filterItems = (category) => {
     const newItems = GroceryData.filter((newVal) => newVal.type === category);
     setItems(newItems);
   };
+
+  //delete item from cart function
+  const deleteItem = (id) => {
+    setCartItems((prev) => prev.filter((item) => item.id !== id));
+    console.log(id);
+  };
+  console.log(cartItems);
 
   return (
     <div className="container-fluid">
@@ -42,6 +51,7 @@ function App() {
             resetItems={setCartItems}
             clear={clear}
             clearList={setClear}
+            delete={deleteItem}
           />
         </div>
         {/* resize menu based on cart vis*/}
