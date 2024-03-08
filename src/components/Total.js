@@ -5,7 +5,6 @@ function Total(props) {
   //total = total * .07
   let msg = "";
   let sub = "";
-  //display totals or ty message
   props.clear
     ? (msg = "ty for shopping!")
     : (msg = "total + tax : " + props.total.toFixed(2) + "$");
